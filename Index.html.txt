@@ -1,3 +1,8 @@
+htgsadra/
+  index.html
+  css/
+  js/
+  assets/
 <!doctype html>
 <html lang="en">
 <head>
@@ -1034,3 +1039,4 @@ document.addEventListener('submit', (e) => {
 </script>
 </body>
 </html>
+
