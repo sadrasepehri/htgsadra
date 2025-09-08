@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTG Inc. — Nationwide Full-Lifecycle IT & Cybersecurity</title>
+<meta name="description" content="One partner for procurement, deployment, 24/7 support, cybersecurity (EDR/MDR/SIEM/NGFW), ITAD, and logistics — nationwide." />
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+    <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0' stop-color='%236ee7b7'/><stop offset='1' stop-color='%237cc5ff'/>
+    </linearGradient></defs>
+    <rect width='64' height='64' rx='12' fill='url(%23g)'/>
+    <text x='50%' y='54%' text-anchor='middle' font-family='Montserrat, Arial, Helvetica, sans-serif' font-size='28' font-weight='900' fill='%2308111a'>HTG</text>
+  </svg>" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="HTG Inc. — Nationwide Full-Lifecycle IT & Cybersecurity" />
+<meta property="og:description" content="Standardize, scale, and secure everything from procurement and deployment to 24/7 support, cybersecurity, and ITAD." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.htginc.com/" />
+<meta property="og:image" content="https://www.htginc.com/assets/og/htginc-og-1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="theme-color" content="#0c1222" />
+
+<!-- Montserrat font -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0c1222; --bg-2:#101735; --card:#121a37; --ink:#eaf0ff;
+  --muted:#a8b3d1; --accent:#6ee7b7; --accent-2:#7cc5ff; --danger:#ff6b6b;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+  --radius:14px; --radius-sm:10px; --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font:16px/1.5 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#0a0f20 0%, #0e1630 60%, #0a0f20 100%);
+}
+a{color:inherit;text-decoration:none;cursor:pointer}
+.container{max-width:var(--max);margin:auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(1.2) blur(10px);
+  background:rgba(12,18,34,.8);border-bottom:1px solid rgba(255,255,255,.06);}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}
+.brand__logo{width:34px;height:34px;border-radius:8px;display:inline-grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#08111a;font-weight:900;box-shadow:var(--shadow)}
+.nav__links{display:flex;align-items:center;gap:18px;margin:0;padding:0}
+.nav__links>li{list-style:none;position:relative}
+.nav__link{padding:8px 10px;border-radius:8px}
+.nav__link:hover,.nav__link:focus{background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#041018;font-weight:700;border:none}
+.btn--ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--ink)}
+.hamburger{display:none;flex-direction:column;gap:4px;width:28px;background:transparent;border:0}
+.hamburger span{height:2px;background:#fff;border-radius:2px;display:block}
+@media (max-width:980px){
+  .hamburger{display:flex}
+  .nav__links{display:none;position:fixed;inset:64px 0 auto 0;background:var(--bg);padding:18px 20px;flex-direction:column}
+  .nav__links.open{display:flex}
+  .nav__links>li{width:100%}
+}
+
+/* Mega menu */
+.mega{position:absolute;left:0;top:110%;display:none;width:min(1000px,90vw);padding:18px;border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+.nav__links>li:focus-within .mega,.nav__links>li:hover .mega{display:block}
+.mega__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mega__col{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0));border:1px solid rgba(255,255,255,.06);padding:14px;border-radius:12px}
+.mega__title{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px}
+.mega__link{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px}
+.mega__link:hover{background:rgba(255,255,255,.06)}
+@media (max-width:980px){.mega{position:static;width:100%}.mega__grid{grid-template-columns:1fr}}
+
+/* Dropdown */
+.dropdown{position:absolute;left:0;top:110%;display:none;width:240px;padding:10px;border-radius:12px;background:var(--card);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06)}
+.dropdown a{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px}
+.dropdown a:hover{background:rgba(255,255,255,.06)}
+.nav__links>li:focus-within .dropdown,.nav__links>li:hover .dropdown{display:block}
+@media (max-width:980px){.dropdown{position:static;width:100%}}
+
+/* Main & Sections */
+main{padding:40px 0}
+.hero{padding:82px 0 34px}
+.hero__layout{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+@media (max-width:980px){.hero__layout{grid-template-columns:1fr}}
+.badge{display:inline-flex;gap:8px;align-items:center;font-weight:700;color:#0e1a12;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:6px 12px;border-radius:999px}
+.hero h1{font-size:42px;line-height:1.1;margin:14px 0 10px;font-weight:800}
+.hero p{color:var(--muted);max-width:720px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+
+.section{padding:40px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border-radius:var(--radius-sm);background:var(--card);border:1px solid rgba(255,255,255,.08);padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px}
+.card p{color:var(--muted);margin:6px 0 0}
+@media (max-width:980px){.cards{grid-template-columns:1fr}}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid2 .full{grid-column:1/-1}
+
+input,textarea,select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0b1228;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+
+.subtitle{color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);margin:6px 6px 0 0;font-size:14px;color:var(--muted);font-weight:600}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge-pill{font-size:13px;border:1px solid rgba(255,255,255,.14);padding:6px 10px;border-radius:999px;color:var(--muted);background:rgba(255,255,255,.03);font-weight:600}
+
+.stat{display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.stat .num{font-weight:900;font-size:28px}
+.logo-row{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:center;opacity:.85}
+.logo{height:36px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.1);border-radius:10px}
+.logo svg{width:72%;opacity:.8}
+
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.quote p{margin:0;color:var(--muted)}
+.quote .who{margin-top:10px;font-weight:700}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
+
+/* Product grid */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+.product .img{aspect-ratio:16/10;background:#0c142c;display:grid;place-items:center}
+.product .body{padding:14px}
+.product .body h4{margin:0}
+.product .body p{margin:6px 0 0;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.faq .q{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.faq .q h4{margin:0 0 8px}
+@media (max-width:980px){.faq{grid-template-columns:1fr}}
+
+/* Footer */
+footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px}
+.foot ul{margin:0;padding:0;list-style:none}
+.foot li{margin:6px 0}
+@media (max-width:980px){.foot{grid-template-columns:1fr}}
+
+/* Routing utility */
+.page{display:none}
+.page.active{display:block}
+
+/* Media helpers */
+img,svg{max-width:100%;height:auto}
+.illus{width:100%;aspect-ratio:4/3;background:radial-gradient(1200px 600px at 20% 20%, rgba(124,197,255,.30), transparent 60%),
+  radial-gradient(1000px 400px at 80% 10%, rgba(110,231,183,.25), transparent 60%),
+  linear-gradient(180deg,rgba(255,255,255,.04),transparent);border:1px solid rgba(255,255,255,.08);border-radius:16px;display:grid;place-items:center}
+.illus svg{filter:drop-shadow(0 10px 30px rgba(0,0,0,.35))}
+.small{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- Header / Nav -->
+<header>
+  <div class="container nav" role="navigation" aria-label="Main">
+    <a data-nav="#home" class="brand" aria-label="HTG Inc. Home">
+      <span class="brand__logo" aria-hidden="true">HTG</span>
+      <span>HTG Inc.</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav__links" id="menu">
+      <li><a class="nav__link" data-nav="#home">Home</a></li>
+      <li><a class="nav__link" data-nav="#about">About</a></li>
+
+      <!-- Services mega menu -->
+      <li>
+        <a class="nav__link" data-nav="#services-lifecycle" aria-haspopup="true" aria-expanded="false">Services ▾</a>
+        <div class="mega" role="menu" aria-label="Services">
+          <div class="mega__grid">
+            <div class="mega__col">
+              <p class="mega__title">IT Lifecycle & Logistics</p>
+              <a class="mega__link" data-nav="#services-lifecycle">Overview<span>→</span></a>
+              <a class="mega__link" data-nav="#services-lifecycle">Nationwide Rollouts<span>→</span></a>
+              <a class="mega__link" data-nav="#services-lifecycle">DC/Office Moves<span>→</span></a>
+              <a class="mega__link" data-nav="#services-lifecycle">ITAD<span>→</span></a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Managed IT & Cloud</p>
+              <a class="mega__link" data-nav="#services-managed">Managed IT Services<span>→</span></a>
+              <a class="mega__link" data-nav="#services-managed">Help Desk & Field<span>→</span></a>
+              <a class="mega__link" data-nav="#services-managed">BC/DR & Backups<span>→</span></a>
+              <a class="mega__link" data-nav="#services-managed">Cloud & DevOps<span>→</span></a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Cybersecurity (MSSP)</p>
+              <a class="mega__link" data-nav="#services-security">Overview<span>→</span></a>
+              <a class="mega__link" data-nav="#services-security">EDR / NGAV<span>→</span></a>
+              <a class="mega__link" data-nav="#services-security">MDR / SOC<span>→</span></a>
+              <a class="mega__link" data-nav="#services-security">SIEM & Analytics<span>→</span></a>
+              <a class="mega__link" data-nav="#services-security">NGFW & Edge<span>→</span></a>
+              <a class="mega__link" data-nav="#services-security">Compliance<span>→</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- e-Store mega menu -->
+      <li>
+        <a class="nav__link" data-nav="#estore">e-Store ▾</a>
+        <div class="mega" role="menu" aria-label="e-Store">
+          <div class="mega__grid">
+            <div class="mega__col">
+              <p class="mega__title">Compute</p>
+              <a class="mega__link" data-nav="#estore-laptops">Laptops<span>→</span></a>
+              <a class="mega__link" data-nav="#estore-servers">Servers<span>→</span></a>
+              <a class="mega__link" data-nav="#estore-accessories">Accessories<span>→</span></a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Network</p>
+              <a class="mega__link" data-nav="#estore-wifi">Wi-Fi / APs<span>→</span></a>
+              <a class="mega__link" data-nav="#estore-switches">Switches<span>→</span></a>
+              <a class="mega__link" data-nav="#estore-firewalls">Firewalls<span>→</span></a>
+            </div>
+            <div class="mega__col">
+              <p class="mega__title">Peripherals & POS</p>
+              <a class="mega__link" data-nav="#estore-printers">Printers<span>→</span></a>
+              <a class="mega__link" data-nav="#estore-pos">POS Systems<span>→</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Resources dropdown -->
+      <li>
+        <a class="nav__link" data-nav="#resources" aria-haspopup="true" aria-expanded="false">Resources ▾</a>
+        <div class="dropdown" role="menu" aria-label="Resources">
+          <a data-nav="#industries">Industries<span>→</span></a>
+          <a data-nav="#cases">Case Studies<span>→</span></a>
+          <a data-nav="#blog">Blogs<span>→</span></a>
+        </div>
+      </li>
+
+      <!-- Contact dropdown -->
+      <li>
+        <a class="nav__link" data-nav="#contact" aria-haspopup="true" aria-expanded="false">Contact ▾</a>
+        <div class="dropdown" role="menu" aria-label="Contact">
+          <a data-nav="#team">Meet the Team<span>→</span></a>
+          <a data-nav="#support">Support Team<span>→</span></a>
+        </div>
+      </li>
+
+      <li><a class="btn" data-nav="#book">Book a Consult</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- PAGES (SPA sections) -->
+<main class="container">
+
+  <!-- HOME -->
+  <section class="page" id="home" data-route>
+    <section class="hero">
+      <div class="hero__layout">
+        <div>
+          <span class="badge" aria-label="Nationwide, Security First">Nationwide • Full-Lifecycle IT • Security-First</span>
+          <h1>One Partner for Your Entire IT Lifecycle — with Enterprise-Grade Security</h1>
+          <p class="subtitle">Standardize, scale, and secure everything from procurement and deployment to 24/7 support, cybersecurity (EDR/MDR/SIEM/NGFW), and ITAD.</p>
+          <p class="hero__cta">
+            <a class="btn" data-nav="#book">Book a 15-Minute Consult</a>
+            <a class="btn btn--ghost" data-nav="#cases" aria-label="See outcomes">See Outcomes</a>
+          </p>
+          <div class="badge-row" aria-label="Compliance badges">
+            <span class="badge-pill">HIPAA</span><span class="badge-pill">PCI</span><span class="badge-pill">SOC 2</span><span class="badge-pill">NIST</span><span class="badge-pill">FIPS</span><span class="badge-pill">R2</span>
+          </div>
+
+          <!-- Differentiator + lifecycle chips -->
+          <p class="small" style="margin-top:10px">
+            One accountable partner from first purchase to secure end-of-life — logistics, support, and security under one roof.
+          </p>
+          <div class="badge-row" aria-label="End-to-end lifecycle">
+            <span class="chip">Procure</span>
+            <span class="chip">Stage & Image</span>
+            <span class="chip">Deploy</span>
+            <span class="chip">Operate 24/7</span>
+            <span class="chip">Secure (EDR/MDR/SIEM)</span>
+            <span class="chip">ITAD</span>
+          </div>
+          <p class="small">Trusted by multi-site retail, healthcare, finance, hospitality, manufacturing, and public sector teams.</p>
+        </div>
+
+        <div class="illus" aria-label="Illustration of racks and shield">
+          <!-- Inline SVG illustration -->
+          <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="gradA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6ee7b7"/>
+                <stop offset="1" stop-color="#7cc5ff"/>
+              </linearGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".35"/>
+              </filter>
+            </defs>
+            <!-- Racks -->
+            <g filter="url(#soft)">
+              <rect x="40" y="90" width="140" height="220" rx="12" fill="#0e1734" stroke="#2a3760"/>
+              <rect x="60" y="110" width="100" height="16" rx="4" fill="#1a2750"/>
+              <rect x="60" y="140" width="100" height="16" rx="4" fill="#1a2750"/>
+              <rect x="60" y="170" width="100" height="16" rx="4" fill="#1a2750"/>
+              <rect x="60" y="200" width="100" height="16" rx="4" fill="#1a2750"/>
+              <rect x="60" y="230" width="100" height="16" rx="4" fill="#1a2750"/>
+            </g>
+            <g filter="url(#soft)">
+              <rect x="230" y="70" width="160" height="250" rx="12" fill="#0e1734" stroke="#2a3760"/>
+              <rect x="250" y="96" width="120" height="18" rx="4" fill="#1a2750"/>
+              <rect x="250" y="126" width="120" height="18" rx="4" fill="#1a2750"/>
+              <rect x="250" y="156" width="120" height="18" rx="4" fill="#1a2750"/>
+              <rect x="250" y="186" width="120" height="18" rx="4" fill="#1a2750"/>
+              <rect x="250" y="216" width="120" height="18" rx="4" fill="#1a2750"/>
+              <rect x="250" y="246" width="120" height="18" rx="4" fill="#1a2750"/>
+            </g>
+            <!-- Shield -->
+            <g filter="url(#soft)">
+              <path d="M470 110 l60 -18 60 18 v70c0 68-63 96-90 104-27-8-90-36-90-104v-70z" fill="url(#gradA)" stroke="#143045" stroke-width="3"/>
+              <circle cx="530" cy="180" r="28" fill="#0e1734" stroke="#a8b3d1"/>
+              <path d="M518 182l8 8 16-18" stroke="#6ee7b7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <!-- Lines -->
+            <path d="M180 200 C220 190, 240 170, 250 150" stroke="#7cc5ff" stroke-width="2" fill="none" stroke-dasharray="4 6"/>
+            <path d="M390 180 C420 190, 450 160, 500 160" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-dasharray="4 6"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust row -->
+    <section class="section" aria-label="Trusted by">
+      <div class="logo-row" title="Trusted by organizations nationwide">
+        <div class="logo">
+          <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Retail</text></svg>
+        </div>
+        <div class="logo"><svg viewBox="0 0 200 60"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Healthcare</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Finance</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Hospitality</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Manufacturing</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><rect width="200" height="60" rx="12" fill="none" stroke="rgba(255,255,255,.15)"/><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Public Sector</text></svg></div>
+      </div>
+      <p class="small" style="margin-top:10px">Logos available upon request • NDA-friendly references</p>
+    </section>
+
+    <!-- Partners strip -->
+    <section class="section" aria-label="Select Partners">
+      <div class="logo-row" title="Select technology partners">
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Microsoft</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">AWS</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Cisco</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">Dell</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">HP</text></svg></div>
+        <div class="logo"><svg viewBox="0 0 200 60"><text x="50%" y="55%" text-anchor="middle" fill="#a8b3d1" font-size="18" font-weight="700">SentinelOne</text></svg></div>
+      </div>
+      <p class="small" style="margin-top:10px">Replace with your actual partner logos/tiers.</p>
+    </section>
+
+    <!-- 3 service cards -->
+    <section class="section">
+      <div class="cards">
+        <article class="card">
+          <h3>Lifecycle & Logistics</h3>
+          <p>Rollouts, moves, imaging, warehousing, and ITAD.</p>
+          <div class="badge-row">
+            <span class="badge-pill">Kitting & asset tags</span>
+            <span class="badge-pill">Runbooks</span>
+            <span class="badge-pill">Validation checklists</span>
+            <span class="badge-pill">R2-aligned ITAD</span>
+          </div>
+          <p><a data-nav="#services-lifecycle">Explore →</a></p>
+        </article>
+        <article class="card">
+          <h3>Managed IT & Cloud</h3>
+          <p>Help desk, field services, monitoring, backups/DR, and DevOps.</p>
+          <div class="badge-row">
+            <span class="badge-pill">24/7 help desk</span>
+            <span class="badge-pill">Monitoring & patching</span>
+            <span class="badge-pill">Backups/DRaaS</span>
+            <span class="badge-pill">Cloud & DevOps</span>
+          </div>
+          <p><a data-nav="#services-managed">Explore →</a></p>
+        </article>
+        <article class="card">
+          <h3>Cybersecurity (MSSP)</h3>
+          <p>EDR/NGAV, MDR/SOC, SIEM, NGFW/edge, and compliance.</p>
+          <div class="badge-row">
+            <span class="badge-pill">EDR/NGAV</span>
+            <span class="badge-pill">MDR & threat hunting</span>
+            <span class="badge-pill">SIEM analytics</span>
+            <span class="badge-pill">NGFW/SD-WAN</span>
+          </div>
+          <p><a data-nav="#services-security">Explore →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Value props / stats -->
+    <section class="section">
+      <div class="kpis">
+        <div class="stat"><span class="num">65,000 sq ft</span><span class="small">National configuration center</span></div>
+        <div class="stat"><span class="num">24/7</span><span class="small">Help desk & SOC coverage</span></div>
+        <div class="stat"><span class="num">72% ↓</span><span class="small">Cutover downtime (case avg.)</span></div>
+        <div class="stat"><span class="num">50-state</span><span class="small">Field services coverage</span></div>
+      </div>
+    </section>
+
+    <!-- SLAs & Outcomes strip -->
+    <section class="section" aria-label="Service levels">
+      <div class="kpis">
+        <div class="stat"><span class="num">15 min</span><span class="small">P1 response (SLA)</span></div>
+        <div class="stat"><span class="num">N+1</span><span class="small">Design standard for core infra</span></div>
+        <div class="stat"><span class="num">99.95%</span><span class="small">Observed endpoint uptime (managed)</span></div>
+        <div class="stat"><span class="num">&lt; 1 hr</span><span class="small">Median cutover window (pilot)</span></div>
+      </div>
+      <p class="small" style="margin-top:8px">*Replace with your real SLA/observed numbers if different.</p>
+    </section>
+
+    <!-- Process -->
+    <section class="section" aria-label="Our process">
+      <h2 style="margin:0 0 12px">How We Work</h2>
+      <div class="badge-row">
+        <span class="chip">Discover</span>
+        <span class="chip">Design</span>
+        <span class="chip">Pilot</span>
+        <span class="chip">Deploy</span>
+        <span class="chip">Operate</span>
+        <span class="chip">Evolve</span>
+      </div>
+      <p class="small" style="margin-top:8px">Clear runbooks and SLAs at every step — fewer vendors, fewer surprises, more uptime.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <h2 style="margin:0 0 12px">What Customers Say</h2>
+      <div class="testimonials">
+        <div class="quote"><p>“HTG standardized our stack, cut vendors in half, and made new-store launches predictable.”</p><div class="who">VP IT, National Retail</div></div>
+        <div class="quote"><p>“Their MDR and evidence packages made our HIPAA audit the least painful one yet.”</p><div class="who">CIO, Multi-Site Healthcare</div></div>
+        <div class="quote"><p>“We finally have one accountable partner for procurement through ITAD — and fewer surprises.”</p><div class="who">COO, Financial Services</div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <h2 style="margin:0 0 12px">Frequently Asked</h2>
+      <div class="faq">
+        <div class="q">
+          <h4>Do you support nationwide multi-site rollouts?</h4>
+          <p>Yes. We stage, image, kit, and ship “Store/Office-in-a-Box” with JIT delivery and validation checklists.</p>
+        </div>
+        <div class="q">
+          <h4>Can you work with our existing vendors?</h4>
+          <p>Absolutely. We’re vendor-agnostic and integrate with your standards, contracts, and governance.</p>
+        </div>
+        <div class="q">
+          <h4>What compliance frameworks do you follow?</h4>
+          <p>HIPAA, PCI, SOC 2, NIST, FIPS, and R2-aligned ITAD with chain-of-custody and audit-ready evidence.</p>
+        </div>
+        <div class="q">
+          <h4>How fast can we start?</h4>
+          <p>We begin with a 15-minute fit check → scope workshop → proposal with SLAs and a rollout plan.</p>
+        </div>
+      </div>
+      <p class="hero__cta"><a class="btn" data-nav="#book">Book a quick fit check</a><a class="btn btn--ghost" data-nav="#contact">Or contact sales</a></p>
+
+      <!-- Lead magnet CTAs -->
+      <p class="hero__cta" style="margin-top:12px">
+        <a class="btn btn--ghost" href="/downloads/htg-rollout-checklist.pdf" target="_blank" rel="noopener">
+          Download rollout checklist (free)
+        </a>
+        <a class="btn btn--ghost" href="/downloads/itad-chain-of-custody-template.pdf" target="_blank" rel="noopener">
+          ITAD chain-of-custody template
+        </a>
+      </p>
+      <p class="small">No email gate. Use internally or share with vendors.</p>
+    </section>
+  </section>
+
+  <!-- SERVICES: LIFECYCLE -->
+  <section class="page" id="services-lifecycle" data-route>
+    <section class="hero">
+      <h1>IT Lifecycle & Logistics</h1>
+      <p class="subtitle">Nationwide deployments, relocations, imaging, warehousing, and compliant ITAD.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Nationwide Rollouts</h3><p>Multi-site deployments (“Store/Office-in-a-Box”), POS & kiosks, endpoint refreshes.</p></article>
+        <article class="card"><h3>Integration & Imaging</h3><p>Kitting, staging, golden images, asset tagging, plug-and-play readiness.</p></article>
+        <article class="card"><h3>Warehousing & JIT</h3><p>Secure storage, pick/pack, just-in-time delivery, RMAs and reverse logistics.</p></article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Data Center & Office Moves</h3><p>Plan, de-risk, and execute relocations with minimal downtime.</p></article>
+        <article class="card"><h3>Cutover & Validation</h3><p>Dry runs, staged cutovers, rollback planning, and success checklists.</p></article>
+        <article class="card"><h3>ITAD</h3><p>Chain-of-custody, certified data destruction, refurb/resale, R2-aligned recycling.</p></article>
+      </div>
+      <p class="hero__cta"><a class="btn" data-nav="#contact">Request rollout plan</a><a class="btn btn--ghost" data-nav="#cases">See related case study</a></p>
+    </section>
+  </section>
+
+  <!-- SERVICES: MANAGED IT -->
+  <section class="page" id="services-managed" data-route>
+    <section class="hero">
+      <h1>Managed IT & Cloud</h1>
+      <p class="subtitle">Keep teams productive with proactive support, resilient infra, and secure cloud.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Help Desk & Field</h3><p>24/7 support, on-site dispatch, and hot spares with clear SLAs.</p></article>
+        <article class="card"><h3>Monitoring & Management</h3><p>Endpoints, servers, networks, patching, and asset management.</p></article>
+        <article class="card"><h3>Backups & DR (BC/DR)</h3><p>Cloud backups, DRaaS, failover testing, and business continuity planning.</p></article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Cloud & DevOps</h3><p>Cloud migration, hybrid integration, IaC pipelines, VMs/containers, DaaS/VDI.</p></article>
+        <article class="card"><h3>Automation</h3><p>CI/CD, configuration as code, and policy-driven guardrails.</p></article>
+        <article class="card"><h3>Cost & Performance</h3><p>Right-sizing, observability, and performance benchmarks.</p></article>
+      </div>
+      <p class="hero__cta"><a class="btn" data-nav="#contact">Get a managed IT quote</a></p>
+    </section>
+  </section>
+
+  <!-- SERVICES: SECURITY -->
+  <section class="page" id="services-security" data-route>
+    <section class="hero">
+      <h1>Cybersecurity (MSSP)</h1>
+      <p class="subtitle">Modern defense with EDR/NGAV, MDR/SOC, SIEM, NGFW/edge, and compliance.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Endpoint Security</h3><p>EDR/NGAV with behavioral detection, isolation/rollback, fleet policies.</p></article>
+        <article class="card"><h3>MDR & Managed SOC</h3><p>24/7 monitoring, threat hunting, guided response, and playbooks.</p></article>
+        <article class="card"><h3>SIEM & Analytics</h3><p>Log centralization, correlation, dashboards, and MITRE-mapped forensics.</p></article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Next-Gen Firewalls & Edge</h3><p>NGFW policy design, SD-WAN, zero-trust edge, secure remote access.</p></article>
+        <article class="card"><h3>Compliance & Risk</h3><p>HIPAA, PCI, SOC 2, NIST, FIPS, R2 — gap assessments & audit evidence.</p></article>
+        <article class="card"><h3>Security Projects</h3><p>Hardening, segmentation, incident readiness, tabletop exercises.</p></article>
+      </div>
+      <p class="hero__cta"><a class="btn" data-nav="#contact">Schedule a security review</a><a class="btn btn--ghost" data-nav="#cases">See security outcomes</a></p>
+    </section>
+  </section>
+
+  <!-- e-STORE HUB -->
+  <section class="page" id="estore" data-route>
+    <section class="hero">
+      <h1>HTG e-Store</h1>
+      <p class="subtitle">Centralized, vendor-agnostic procurement with pre-config, staging, and JIT delivery.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Laptops</h3><p>Business-class notebooks, imaging, asset tagging, warranty options.</p><p><a data-nav="#estore-laptops">Browse →</a></p></article>
+        <article class="card"><h3>Printers</h3><p>Workgroup printers and MFPs with supplies management.</p><p><a data-nav="#estore-printers">Browse →</a></p></article>
+        <article class="card"><h3>POS Systems</h3><p>Retail and hospitality endpoints, peripherals, staging.</p><p><a data-nav="#estore-pos">Browse →</a></p></article>
+        <article class="card"><h3>Servers</h3><p>Rack/tower servers, HCI nodes, and configuration.</p><p><a data-nav="#estore-servers">Browse →</a></p></article>
+        <article class="card"><h3>Wi-Fi / APs</h3><p>Enterprise APs, controllers, and site surveys.</p><p><a data-nav="#estore-wifi">Browse →</a></p></article>
+        <article class="card"><h3>Switches</h3><p>Access/campus switching, PoE, automation.</p><p><a data-nav="#estore-switches">Browse →</a></p></article>
+        <article class="card"><h3>Firewalls</h3><p>NGFW, SD-WAN edge, secure remote access.</p><p><a data-nav="#estore-firewalls">Browse →</a></p></article>
+        <article class="card"><h3>Accessories</h3><p>Monitors, docks, keyboards, cables, and more.</p><p><a data-nav="#estore-accessories">Browse →</a></p></article>
+      </div>
+    </section>
+  </section>
+
+  <!-- e-STORE CATEGORY TEMPLATES (unchanged samples) -->
+  <section class="page" id="estore-laptops" data-route>
+    <section class="hero"><h1>Laptops</h1><p class="subtitle">Business-class notebooks, imaging, and lifecycle options.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img">
+          <svg viewBox="0 0 320 200"><rect x="20" y="40" width="280" height="120" rx="12" fill="#1a2750"/><rect x="90" y="168" width="140" height="10" rx="5" fill="url(#gradA)"/></svg>
+        </div><div class="body"><h4>14&quot; Pro Business</h4><p>Intel® i5/i7, 16-32GB, 512GB-1TB, Wi-Fi 6E • Imaging + asset tags</p></div></div>
+        <div class="product"><div class="img">
+          <svg viewBox="0 0 320 200"><rect x="30" y="60" width="260" height="100" rx="10" fill="#1a2750"/><rect x="110" y="168" width="100" height="10" rx="5" fill="url(#gradA)"/></svg>
+        </div><div class="body"><h4>15&quot; Power User</h4><p>Intel®/AMD, 32-64GB, dGPU options • Docking bundles</p></div></div>
+        <div class="product"><div class="img">
+          <svg viewBox="0 0 320 200"><rect x="40" y="70" width="240" height="90" rx="10" fill="#1a2750"/><rect x="120" y="168" width="80" height="10" rx="5" fill="url(#gradA)"/></svg>
+        </div><div class="body"><h4>13&quot; Field-Ready</h4><p>Ruggedized options • LTE/5G • Hot-swap spares</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-printers" data-route>
+    <section class="hero"><h1>Printers</h1><p class="subtitle">Workgroup printers, MFPs, and managed supplies.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="40" y="90" width="240" height="70" rx="8" fill="#1a2750"/><rect x="80" y="60" width="160" height="40" rx="8" fill="#24325f"/></svg></div><div class="body"><h4>MFP A4 Office</h4><p>Print/Scan/Copy • Secure release • Supplies mgmt</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="60" y="95" width="200" height="70" rx="8" fill="#1a2750"/><rect x="90" y="65" width="140" height="35" rx="8" fill="#24325f"/></svg></div><div class="body"><h4>Label/Receipt</h4><p>POS thermal printers • Kitting & staging</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="50" y="85" width="220" height="80" rx="8" fill="#1a2750"/></svg></div><div class="body"><h4>Large-Format</h4><p>Drawings/posters • Fleet monitoring</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-pos" data-route>
+    <section class="hero"><h1>POS Systems</h1><p class="subtitle">Retail/hospitality POS endpoints and peripherals.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="50" y="70" width="220" height="80" rx="10" fill="#1a2750"/><rect x="130" y="150" width="60" height="20" rx="6" fill="#24325f"/></svg></div><div class="body"><h4>All-in-One POS</h4><p>Touch terminals • MSR/NFC • Stands & mounts</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="70" y="90" width="180" height="60" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Kitchen/Back-of-House</h4><p>Rugged displays • Water/oil resistant</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><circle cx="160" cy="110" r="40" fill="#1a2750"/></svg></div><div class="body"><h4>Peripherals</h4><p>Scanners • Scales • Cash drawers • Cables</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-servers" data-route>
+    <section class="hero"><h1>Servers</h1><p class="subtitle">Rack/tower servers, HCI, and configuration services.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="40" y="90" width="240" height="50" rx="6" fill="#1a2750"/><rect x="40" y="145" width="240" height="20" rx="6" fill="#24325f"/></svg></div><div class="body"><h4>1U/2U Rack</h4><p>vSphere/Hyper-V ready • DRaaS bundles</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="90" y="70" width="140" height="120" rx="8" fill="#1a2750"/></svg></div><div class="body"><h4>Tower</h4><p>Edge compute • Quiet office deployments</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="70" y="90" width="180" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>HCI Nodes</h4><p>Scalable clusters • Monitoring & patching</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-wifi" data-route>
+    <section class="hero"><h1>Wi-Fi / APs</h1><p class="subtitle">Enterprise Wi-Fi access points, controllers, and site surveys.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><circle cx="160" cy="100" r="40" fill="#1a2750"/><circle cx="160" cy="100" r="65" fill="none" stroke="#24325f"/></svg></div><div class="body"><h4>Indoor APs</h4><p>Wi-Fi 6E • Heatmaps • Tuning & analytics</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="60" y="80" width="200" height="80" rx="12" fill="#1a2750"/></svg></div><div class="body"><h4>Outdoor APs</h4><p>Ruggedized • Long-range • Mesh</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="70" y="80" width="180" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Controllers</h4><p>Cloud or on-prem • Role-based access</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-switches" data-route>
+    <section class="hero"><h1>Switches</h1><p class="subtitle">Campus/access switching, PoE, and automation.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="40" y="90" width="240" height="60" rx="10" fill="#1a2750"/><g fill="#24325f"><rect x="60" y="110" width="16" height="16" rx="3"/><rect x="84" y="110" width="16" height="16" rx="3"/><rect x="108" y="110" width="16" height="16" rx="3"/><rect x="132" y="110" width="16" height="16" rx="3"/></g></svg></div><div class="body"><h4>Access/Edge</h4><p>PoE+ • VLAN/ACLs • Zero-touch</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="50" y="80" width="220" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Aggregation</h4><p>10/25/40G uplinks • Stacking</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="60" y="80" width="200" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Automation</h4><p>Templates • API • NAC integrations</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-firewalls" data-route>
+    <section class="hero"><h1>Firewalls</h1><p class="subtitle">Next-gen firewalls, SD-WAN edge, secure remote access.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="40" y="90" width="240" height="60" rx="10" fill="#1a2750"/><path d="M70 110h180" stroke="#24325f" /></svg></div><div class="body"><h4>NGFW</h4><p>App control • IPS • TLS decryption • SD-WAN</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="60" y="85" width="200" height="70" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Remote Access</h4><p>Client/VPN • ZTNA • MFA</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="50" y="80" width="220" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Edge Appliances</h4><p>Retail/branch ready • LTE failover</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <section class="page" id="estore-accessories" data-route>
+    <section class="hero"><h1>Accessories</h1><p class="subtitle">Monitors, docks, keyboards, cables, and more.</p><p><a class="btn" data-nav="#contact">Request a Quote</a></p></section>
+    <section class="section">
+      <div class="product-grid">
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="40" y="40" width="240" height="120" rx="10" fill="#1a2750"/><rect x="140" y="165" width="40" height="10" rx="5" fill="#24325f"/></svg></div><div class="body"><h4>Monitors</h4><p>24-34&quot; • Color-accurate options • VESA</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="80" y="90" width="160" height="40" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Docks</h4><p>USB-C/Thunderbolt • Multi-display</p></div></div>
+        <div class="product"><div class="img"><svg viewBox="0 0 320 200"><rect x="60" y="80" width="200" height="80" rx="10" fill="#1a2750"/></svg></div><div class="body"><h4>Peripherals</h4><p>Keyboards, mice, cables, mounts</p></div></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page" id="about" data-route>
+    <section class="hero">
+      <h1>About HTG Inc.</h1>
+      <p class="subtitle">Nationwide, end-to-end partner for full-lifecycle IT and cybersecurity.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Nationwide, End-to-End</h3><p>Procurement, deployment, support, security, and ITAD under one roof.</p></article>
+        <article class="card"><h3>What You Can Expect</h3><p>One accountable partner. Security-first design. Transparent SLAs.</p></article>
+        <article class="card"><h3>Coverage</h3><p>65,000-sq-ft configuration center • 50-state field services</p></article>
+      </div>
+      <div style="margin-top:16px" class="badge-row">
+        <span class="badge-pill">Change control</span><span class="badge-pill">Runbooks</span><span class="badge-pill">Asset mgmt</span><span class="badge-pill">CMDB</span><span class="badge-pill">Ticketing & SLAs</span>
+      </div>
+    </section>
+  </section>
+
+  <!-- RESOURCES: INDUSTRIES -->
+  <section class="page" id="industries" data-route>
+    <section class="hero">
+      <h1>Industries</h1>
+      <p class="subtitle">Retail • Healthcare • Finance • Hospitality • Manufacturing • Public Sector</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Retail</h3><p>Standardized stacks, “Store-in-a-Box,” predictable cutovers.</p></article>
+        <article class="card"><h3>Healthcare</h3><p>HIPAA-ready MDR/SIEM, endpoint hardening, audit evidence.</p></article>
+        <article class="card"><h3>Finance</h3><p>NGFW/SD-WAN, SIEM, DRaaS with low RPO/RTO.</p></article>
+        <article class="card"><h3>Hospitality</h3><p>Rapid rollouts, guest Wi-Fi segmentation, 24/7 support.</p></article>
+        <article class="card"><h3>Manufacturing</h3><p>Rugged endpoints, network segmentation, OT security.</p></article>
+        <article class="card"><h3>Public Sector</h3><p>NIST/FIPS aligned controls, asset lifecycle, ITAD.</p></article>
+      </div>
+    </section>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="page" id="cases" data-route>
+    <section class="hero">
+      <h1>Case Studies</h1>
+      <p class="subtitle">Real outcomes from retail, healthcare, finance, and more.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card">
+          <h3>Retail: 300-Site Rollout</h3>
+          <p>Pre-imaged endpoints, SD-WAN + NGFW; downtime reduced 72%.</p>
+          <p class="small">Scope: Store-in-a-Box, APs, switches, POS, validation runbooks</p>
+        </article>
+        <article class="card">
+          <h3>Healthcare: MDR & HIPAA</h3>
+          <p>EDR + SIEM + MDR; audit-ready evidence packages.</p>
+          <p class="small">Scope: Endpoint hardening, MDR, quarterly tabletop exercises</p>
+        </article>
+        <article class="card">
+          <h3>Finance: Cloud DR</h3>
+          <p>Hybrid cloud + DRaaS; RPO minutes, RTO &lt; 1 hour.</p>
+          <p class="small">Scope: Immutable backups, failover runbooks, testing cadence</p>
+        </article>
+      </div>
+      <p class="hero__cta"><a class="btn" data-nav="#contact">Ask for references</a></p>
+    </section>
+  </section>
+
+  <!-- RESOURCES: BLOG -->
+  <section class="page" id="blog" data-route>
+    <section class="hero">
+      <h1>Blog</h1>
+      <p class="subtitle">Insights on lifecycle IT, security, and operations.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>The Cybersecurity Investment Ladder</h3><p>How to phase security from basics to enterprise posture.</p></article>
+        <article class="card"><h3>Rollouts without Surprises</h3><p>Playbooks that shrink downtime and standardize launch.</p></article>
+        <article class="card"><h3>ITAD and Compliance</h3><p>Chain-of-custody and audit-ready documentation.</p></article>
+      </div>
+      <p class="hero__cta"><a class="btn btn--ghost" data-nav="#contact">Submit a topic</a></p>
+    </section>
+  </section>
+
+  <!-- CONTACT (HUB) -->
+  <section class="page" id="contact" data-route>
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p class="subtitle">We respond quickly.</p>
+    </section>
+    <section class="section">
+      <form id="contactForm" class="card" novalidate>
+        <div class="grid2">
+          <div><label for="name">Full name</label><input id="name" name="name" type="text" required /></div>
+          <div><label for="email">Work email</label><input id="email" name="email" type="email" required /></div>
+          <div><label for="company">Company</label><input id="company" name="company" type="text" /></div>
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" /></div>
+          <div class="full"><label for="msg">How can we help?</label><textarea id="msg" name="msg" placeholder="Goals, timeline, constraints…"></textarea></div>
+        </div>
+        <p><button class="btn" type="submit">Send message</button></p>
+        <div id="formHelp" class="subtitle" role="status" aria-live="polite"></div>
+        <p class="small">Prefer email? <a href="mailto:sales@htginc.com">sales@htginc.com</a> • <a href="tel:+18005550199">+1 (800) 555-0199</a></p>
+      </form>
+      <p class="small" style="margin-top:12px">HQ: {{Address line 1}}, {{City, ST}} • Support: <a href="mailto:support@htginc.com">support@htginc.com</a></p>
+    </section>
+  </section>
+
+  <!-- CONTACT: TEAM -->
+  <section class="page" id="team" data-route>
+    <section class="hero">
+      <h1>Meet the Team</h1>
+      <p class="subtitle">Leadership, engineering, field, and support.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Leadership</h3><p>Strategy, partnerships, and customer outcomes.</p></article>
+        <article class="card"><h3>Engineering</h3><p>Solution architects, cloud, network, and security.</p></article>
+        <article class="card"><h3>Field & Logistics</h3><p>Nationwide dispatch, kitting, and cutover teams.</p></article>
+      </div>
+    </section>
+  </section>
+
+  <!-- CONTACT: SUPPORT -->
+  <section class="page" id="support" data-route>
+    <section class="hero">
+      <h1>Support Team</h1>
+      <p class="subtitle">24/7 help desk & SOC. Ticketing and SLAs you can count on.</p>
+    </section>
+    <section class="section">
+      <div class="cards">
+        <article class="card"><h3>Open a Ticket</h3><p>Email <a href="mailto:support@htginc.com">support@htginc.com</a> or use your portal.</p></article>
+        <article class="card"><h3>Emergency</h3><p>Call <a href="tel:+18005550199">+1 (800) 555-0199</a> and reference your PIN.</p></article>
+        <article class="card"><h3>Runbooks</h3><p>Change control, on-call, and escalation procedures.</p></article>
+      </div>
+    </section>
+  </section>
+
+  <!-- BOOK -->
+  <section class="page" id="book" data-route>
+    <section class="hero">
+      <h1>Book a 15-Minute Consult</h1>
+      <p class="subtitle">No pressure — just a quick fit check.</p>
+      <p><a class="btn" href="{{https://calendly.com/your-link}}" target="_blank" rel="noopener">Open Scheduling</a></p>
+      <p class="subtitle">Prefer email? <a href="mailto:sales@htginc.com">sales@htginc.com</a> • <a href="tel:+18005550199">+1 (800) 555-0199</a></p>
+      <p class="small">We’ll send a short agenda and come prepared with options.</p>
+    </section>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container foot">
+    <div>
+      <div class="brand"><span class="brand__logo" aria-hidden="true">HTG</span><span>HTG Inc.</span></div>
+      <small>Nationwide full-lifecycle IT & cybersecurity partner.</small><br/>
+      <small>SLAs: P1 15 min response • Change control & runbooks • Quarterly tabletop (security)</small><br/>
+      <small>Compliance-ready: HIPAA • PCI • SOC 2 • NIST • FIPS • R2-aligned ITAD</small><br/>
+      <small>© <span id="year"></span> HTG Inc. All rights reserved.</small><br/>
+      <div class="badge-row" style="margin-top:8px">
+        <a class="badge-pill" href="{{https://www.linkedin.com/company/htg-inc}}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="badge-pill" href="{{https://x.com/yourhandle}}" target="_blank" rel="noopener">X</a>
+        <a class="badge-pill" href="{{https://www.facebook.com/yourpage}}" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div>
+      <strong>Company</strong>
+      <ul>
+        <li><a data-nav="#about">About</a></li>
+        <li><a data-nav="#team">Meet the Team</a></li>
+        <li><a data-nav="#support">Support Team</a></li>
+        <li><a data-nav="#contact">Contact</a></li>
+        <li><a data-nav="#book">Book a Consult</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Services</strong>
+      <ul>
+        <li><a data-nav="#services-lifecycle">Lifecycle & Logistics</a></li>
+        <li><a data-nav="#services-managed">Managed IT & Cloud</a></li>
+        <li><a data-nav="#services-security">Cybersecurity</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Resources</strong>
+      <ul>
+        <li><a data-nav="#industries">Industries</a></li>
+        <li><a data-nav="#cases">Case Studies</a></li>
+        <li><a data-nav="#blog">Blogs</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- JSON-LD: Organization + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HTG Inc.",
+  "url": "https://www.htginc.com/",
+  "logo": "https://www.htginc.com/favicon.ico",
+  "sameAs": ["https://www.linkedin.com/company/htg-inc"],
+  "contactPoint": [{
+    "@type":"ContactPoint",
+    "telephone":"+1-800-555-0199",
+    "contactType":"sales",
+    "areaServed":"US"
+  }]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type":"Question","name":"Do you support nationwide multi-site rollouts?","acceptedAnswer":{"@type":"Answer","text":"Yes. We stage, image, kit, and ship Store/Office-in-a-Box with JIT delivery and validation."}
+  },{
+    "@type":"Question","name":"Can you work with our existing vendors?","acceptedAnswer":{"@type":"Answer","text":"We’re vendor-agnostic and integrate with your standards, contracts, and governance."}
+  },{
+    "@type":"Question","name":"What compliance frameworks do you follow?","acceptedAnswer":{"@type":"Answer","text":"HIPAA, PCI, SOC 2, NIST, FIPS, and R2-aligned ITAD with chain-of-custody and audit-ready evidence."}
+  },{
+    "@type":"Question","name":"How fast can we start?","acceptedAnswer":{"@type":"Answer","text":"We begin with a 15-minute fit check, then a scoped workshop, and a proposal with SLAs and a rollout plan."}
+  }]
+}
+</script>
+
+<!-- JSON-LD: ProfessionalService / Services Catalog -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"HTG Inc.",
+  "url":"https://www.htginc.com/",
+  "areaServed":"US",
+  "serviceArea":{"@type":"Country","name":"United States"},
+  "description":"Nationwide full-lifecycle IT and cybersecurity: procurement, deployment, 24/7 support, MDR/SIEM/NGFW, and ITAD.",
+  "telephone":"+1-800-555-0199",
+  "email":"sales@htginc.com",
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"IT & Cybersecurity Services",
+    "itemListElement":[
+      {
+        "@type":"OfferCatalog",
+        "name":"IT Lifecycle & Logistics",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Nationwide Rollouts"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Integration & Imaging"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Warehousing & JIT"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Data Center & Office Moves"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"IT Asset Disposition (ITAD)"}}
+        ]
+      },
+      {
+        "@type":"OfferCatalog",
+        "name":"Managed IT & Cloud",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Help Desk & Field Services"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Monitoring & Management"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Backups & DRaaS"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cloud & DevOps"}}
+        ]
+      },
+      {
+        "@type":"OfferCatalog",
+        "name":"Cybersecurity (MSSP)",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Endpoint Security (EDR/NGAV)"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"MDR & Managed SOC"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"SIEM & Analytics"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Next-Gen Firewalls & Edge"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Compliance & Risk"}}
+        ]
+      }
+    ]
+  }
+}
+</script>
+
+<script>
+// Simple SPA router (hash-based)
+const routes = [];
+document.querySelectorAll('[data-route]').forEach(s => routes.push(s));
+
+function show(route) {
+  routes.forEach(sec => sec.classList.remove('active'));
+  const el = document.querySelector(route);
+  (el ? el : document.querySelector('#home')).classList.add('active');
+  // Close mobile menu on navigation
+  const m = document.getElementById('menu');
+  const h = document.getElementById('hamburger');
+  m?.classList.remove('open');
+  h?.setAttribute('aria-expanded','false');
+  // Set document title per page for basic SEO
+  const titleMap = {
+    '#home': 'HTG Inc. — Nationwide Full-Lifecycle IT & Cybersecurity',
+    '#services-lifecycle': 'IT Lifecycle & Logistics — HTG Inc.',
+    '#services-managed': 'Managed IT & Cloud — HTG Inc.',
+    '#services-security': 'Cybersecurity (MSSP) — HTG Inc.',
+    '#estore': 'HTG e-Store — HTG Inc.',
+    '#about': 'About HTG Inc.',
+    '#industries': 'Industries — HTG Inc.',
+    '#cases': 'Case Studies — HTG Inc.',
+    '#blog': 'Blog — HTG Inc.',
+    '#team': 'Meet the Team — HTG Inc.',
+    '#support': 'Support Team — HTG Inc.',
+    '#contact': 'Contact — HTG Inc.',
+    '#book': 'Book a Consult — HTG Inc.'
+  };
+  document.title = titleMap[route] || 'HTG Inc.';
+}
+
+// Wire nav clicks
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('[data-nav]');
+  if (!link) return;
+  e.preventDefault();
+  const target = link.getAttribute('data-nav') || '#home';
+  location.hash = target;
+});
+
+// Hash change
+window.addEventListener('hashchange', () => show(location.hash || '#home'));
+
+// Ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  hamburger?.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  // Year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Initial route
+  show(location.hash || '#home');
+});
+
+// Contact form (demo)
+document.addEventListener('submit', (e) => {
+  const form = e.target.closest('#contactForm');
+  if (!form) return;
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const name = document.getElementById('name').value.trim();
+  const help = document.getElementById('formHelp');
+  if (!name || !email || !email.includes('@')) {
+    help.textContent = 'Please enter your name and a valid email.';
+    help.style.color = 'var(--danger)';
+    return;
+  }
+  help.textContent = 'Thanks! We’ll reach out shortly.';
+  help.style.color = 'var(--accent)';
+  form.reset();
+});
+</script>
+</body>
+</html>
